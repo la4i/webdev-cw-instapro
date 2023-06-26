@@ -12,4 +12,4 @@ https://la4i.github.io/webdev-cw-instapro/
 
 ## Фактически затраченное время
 
-20 часов
+20  часов

@@ -25,8 +25,7 @@ export function renderAuthPageComponent({ appEl, setUser }) {
                       <input type="text" id="name-input" class="input" placeholder="Имя" />
                       `
         : ""
-      }
-                  
+      }                  
                   <input type="text" id="login-input" class="input" placeholder="Логин" />
                   <input type="password" id="password-input" class="input" placeholder="Пароль" />
                   
@@ -49,7 +48,7 @@ export function renderAuthPageComponent({ appEl, setUser }) {
 `;
 
     appEl.innerHTML = appHtml;
-    
+
     const setError = (message) => {
       appEl.querySelector(".form-error").textContent = message;
     };

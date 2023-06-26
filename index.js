@@ -1,4 +1,4 @@
-import { getPosts } from "./api.js";
+import { getPosts, postPosts, getUserPosts } from "./api.js";
 import { renderAddPostPageComponent } from "./components/add-post-page-component.js";
 import { renderAuthPageComponent } from "./components/auth-page-component.js";
 import {
@@ -12,8 +12,8 @@ import { renderPostsPageComponent } from "./components/posts-page-component.js";
 import { renderLoadingPageComponent } from "./components/loading-page-component.js";
 import { renderUserPostsPageComponent } from "./components/user-posts-page-component.js";
 import { getUserFromLocalStorage, removeUserFromLocalStorage, saveUserToLocalStorage } from "./helpers.js";
-import { ruLocale } from "./date-fns/locale/ru";
-import { formatDistanceToNow } from "./date-fns/formatDistanceToNow";
+import { ru } from "date-fns/locale";
+import { formatDistanceToNow } from "date-fns";
 
 export let user = getUserFromLocalStorage();
 export let page = null;
@@ -23,7 +23,7 @@ export const changeLocalPosts = (newPosts) => {
   posts = newPosts;
 };
 
-const getToken = () => {
+export const getToken = () => {
   const token = user ? `Bearer ${user.token}` : undefined;
   return token;
 };
@@ -35,7 +35,7 @@ export const logout = () => {
 };
 
 export const formatDate = (date) => {
-  return formatDistanceToNow(new Date(date), { addSuffix: true, locale: ruLocale });
+  return formatDistanceToNow(new Date(date), { addSuffix: true, locale: ru });
 };
 
 export const goToPage = (newPage, data) => {
@@ -90,7 +90,7 @@ export const goToPage = (newPage, data) => {
   throw new Error("страницы не существует");
 };
 
-const renderApp = () => {
+export const renderApp = () => {
   const appEl = document.getElementById("app");
   if (page === LOADING_PAGE) {
     return renderLoadingPageComponent({

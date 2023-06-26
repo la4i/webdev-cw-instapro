@@ -153,5 +153,5 @@ export function renderAuthPageComponent({ appEl, setUser }) {
     });
   };
 
-  renderForm ();
+  renderForm();
 }

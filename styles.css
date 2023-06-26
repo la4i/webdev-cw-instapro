@@ -196,3 +196,7 @@
   width: 100%;
   text-align: center;
 }
+
+.--not-entered {
+  display: none;
+}

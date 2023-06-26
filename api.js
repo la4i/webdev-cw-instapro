@@ -1,4 +1,3 @@
-
 const personalKey = "la4i";
 const baseHost = "https://webdev-hw-api.vercel.app";
 const postsHost = `${baseHost}/api/v1/${personalKey}/instapro`;
@@ -122,3 +121,15 @@ export const dislikeApi = ({ postId, token }) => {
       }
     });
 };
+
+export function uploadImage({ file }) {
+  const data = new FormData();
+  data.append("file", file);
+
+  return fetch(baseHost + "/api/upload/image", {
+    method: "POST",
+    body: data,
+  }).then((response) => {
+    return response.json();
+  });
+}

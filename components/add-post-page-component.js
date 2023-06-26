@@ -13,13 +13,8 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
           <h3 class="form-title">Добавьте пост</h3>
           <div class="form-inputs">
             <div class="add-image-post"></div>
-            <textarea
-              class="textarea add-post-textarea"
-              placeholder="Добавить описание..."
-            ></textarea>
-            <div class="form-error-not-entered">
-              Нужно добавить фотографию и описание
-            </div>
+            <textarea class="textarea add-post-textarea" placeholder="Добавить описание..."></textarea>
+            <div class="form-error --not-entered"> Нужно добавить фотографию и описание </div>
             <button class="button" id="add-button">Добавить</button>
           </div>
         </div>
